@@ -89,4 +89,77 @@ public class TrackerTest {
 
     }
 
+    @Test
+    public void whenReplace() {
+        Tracker tracker = new Tracker();
+        Item bug = new Item();
+        bug.setName("Bug");
+        tracker.add(bug);
+        int id = bug.getId();
+        Item bugWithDesc = new Item();
+        bugWithDesc.setName("Bug with description");
+        tracker.replace(id, bugWithDesc);
+        assertThat(tracker.findById(id).getName(), is("Bug with description"));
+    }
+
+    @Test
+    public void whenReplaceTrackerWith3Items() {
+        Tracker tracker = new Tracker();
+        Item bugJohny = new Item();
+        bugJohny.setName("Bug Johny");
+        tracker.add(bugJohny);
+
+        Item bugHarry = new Item();
+        bugHarry.setName("Bug Harry");
+        tracker.add(bugHarry);
+
+        Item bugMrFord = new Item();
+        bugMrFord.setName("Bug Mr Ford");
+        tracker.add(bugMrFord);
+
+        int id = bugMrFord.getId();
+        tracker.replace(id, bugHarry);
+        assertThat(tracker.findById(id).getName(), is("Bug Harry"));
+    }
+
+    @Test
+    public void whenReplaceTrackerWith3ItemsAndReplace3To1() {
+        Tracker tracker = new Tracker();
+        Item bugJohny = new Item();
+        bugJohny.setName("Bug Johny");
+        tracker.add(bugJohny);
+
+        Item bugHarry = new Item();
+        bugHarry.setName("Bug Harry");
+        tracker.add(bugHarry);
+
+        Item bugMrFord = new Item();
+        bugMrFord.setName("Bug Mr Ford");
+        tracker.add(bugMrFord);
+
+        int id = bugMrFord.getId();
+        tracker.replace(id, bugJohny);
+        assertThat(tracker.findById(id).getName(), is("Bug Johny"));
+    }
+
+    @Test
+    public void whenReplaceTrackerWith3ItemsAndReplace1To3() {
+        Tracker tracker = new Tracker();
+        Item bugJohny = new Item();
+        bugJohny.setName("Bug Johny");
+        tracker.add(bugJohny);
+
+        Item bugHarry = new Item();
+        bugHarry.setName("Bug Harry");
+        tracker.add(bugHarry);
+
+        Item bugMrFord = new Item();
+        bugMrFord.setName("Bug Mr Ford");
+        tracker.add(bugMrFord);
+
+        int id = bugMrFord.getId();
+        tracker.replace(id, bugJohny);
+        assertThat(tracker.findById(id).getName(), is("Bug Johny"));
+    }
+
 }
