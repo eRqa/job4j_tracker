@@ -52,7 +52,11 @@ public class Tracker {
 
         int index = indexOf(id);
         if (index != -1) {
-            this.items[index].setName(item.getName());
+
+            int tmpId = items[index].getId();
+            this.items[index] = item;
+            this.items[index].setId(tmpId);
+            //this.items[index].setName(item.getName());
             return true;
         }
 
