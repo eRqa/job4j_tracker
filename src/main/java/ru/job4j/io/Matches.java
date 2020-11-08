@@ -7,10 +7,10 @@ public class Matches {
     public static void main(String[] args) {
 
         int matchesCount = 11;
-        boolean run = true;
         Scanner sc = new Scanner(System.in);
+        boolean firstOneWon = false;
 
-        while (run) {
+        while (matchesCount != 0) {
 
             System.out.println("Введите количество списек от 1 до 3");
             int select = Integer.parseInt(sc.nextLine());
@@ -28,11 +28,12 @@ public class Matches {
             matchesCount = matchesCount - select;
             System.out.println("На столе осталось " + matchesCount + " спичек");
 
-            if (matchesCount == 0) {
-                run = false;
-            }
+            firstOneWon = !firstOneWon;
 
         }
+
+        String winner = firstOneWon ? "first" : "second";
+        System.out.println(winner + " player won");
 
     }
 
