@@ -7,6 +7,40 @@ import static org.junit.Assert.*;
 public class StartUITest {
 
     @Test
+    public void whenReplaceItem() {
+        Tracker tracker = new Tracker();
+        Item item = new Item("new item");
+        tracker.add(item);
+        String[] answers = {
+                String.valueOf(item.getId()), // id сохраненной заявки в объект tracker.
+                "replaced item"
+        };
+        StartUI.replaceItem(tracker, new StubInput(answers));
+        Item replaced = tracker.findById(item.getId());
+        assertThat(replaced.getName(), is("replaced item"));
+    }
+
+    @Test
+    public void whenDeleteItem() {
+        Tracker tracker = new Tracker();
+        Item firstItem = new Item("First item");
+        Item secondItem = new Item("Second item");
+        Item thirdItem = new Item("Third item");
+
+        tracker.add(firstItem);
+        tracker.add(secondItem);
+        tracker.add(thirdItem);
+
+        String[] answers = {"2"};
+
+        StartUI.deleteItem(tracker, new StubInput(answers));
+
+        Item deleted = tracker.findById(secondItem.getId());
+        assertNull(deleted);
+
+    }
+
+    @Test
     public void whenAddItem() {
         String[] answers = {"Fix PC"};
         Input input = new StubInput(answers);
