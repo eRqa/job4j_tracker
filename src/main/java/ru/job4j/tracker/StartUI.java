@@ -9,7 +9,7 @@ public class StartUI {
             int select = Integer.parseInt(input.askStr("Select: "));
             if (select == 0) {
                 createItem(tracker, input);
-            }  else if (select == 1) {
+            } else if (select == 1) {
                 showAllItems(tracker);
             } else if (select == 2) {
                 replaceItem(tracker, input);
@@ -45,7 +45,7 @@ public class StartUI {
         Item[] allItems = tracker.findAll();
 
         if (allItems.length > 0) {
-            for (Item curItem:
+            for (Item curItem :
                     allItems) {
                 System.out.println(curItem.toString());
             }
