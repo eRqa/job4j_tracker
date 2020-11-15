@@ -6,6 +6,83 @@ import static org.junit.Assert.*;
 
 public class StartUITest {
 
+    @Test
+    public void whenCreateItem() {
+        Input in = new StubInput(
+                new String[] {"0", "Item name", "6"}
+        );
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+                new CreateAction(),
+                new ReplaceItemAction(),
+                new FindItemByNameAction(),
+                new FindItemByIdAction(),
+                new ShowAllItemsAction(),
+                new DeleteItemAction(),
+                new ExitAction()
+        };
+        new StartUI().init(in, tracker, actions);
+        assertThat(tracker.findAll()[0].getName(), is("Item name"));
+    }
+
+    @Test
+    public void whenDeleteItemWithId2() {
+        Input in = new StubInput(
+                new String[] {"0", "Item name", "0", "ItemName2", "5", "2", "6"}
+        );
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+                new CreateAction(),
+                new ReplaceItemAction(),
+                new FindItemByNameAction(),
+                new FindItemByIdAction(),
+                new ShowAllItemsAction(),
+                new DeleteItemAction(),
+                new ExitAction()
+        };
+        new StartUI().init(in, tracker, actions);
+        assertThat(tracker.findAll()[0].getName(), is("Item name"));
+    }
+
+    @Test
+    public void whenDeleteItemWithId1() {
+        Input in = new StubInput(
+                new String[] {"0", "Item name", "0", "ItemName2", "5", "1", "6"}
+        );
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+                new CreateAction(),
+                new ReplaceItemAction(),
+                new FindItemByNameAction(),
+                new FindItemByIdAction(),
+                new ShowAllItemsAction(),
+                new DeleteItemAction(),
+                new ExitAction()
+        };
+        new StartUI().init(in, tracker, actions);
+        assertThat(tracker.findAll()[0].getName(), is("ItemName2"));
+    }
+
+    @Test
+    public void whenReplaceItemWithId1() {
+        Input in = new StubInput(
+                new String[] {"0", "Item name", "0", "ItemName2", "1", "1", "EditedItem", "6"}
+        );
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+                new CreateAction(),
+                new ReplaceItemAction(),
+                new FindItemByNameAction(),
+                new FindItemByIdAction(),
+                new ShowAllItemsAction(),
+                new DeleteItemAction(),
+                new ExitAction()
+        };
+        new StartUI().init(in, tracker, actions);
+        assertThat(tracker.findAll()[0].getName(), is("EditedItem"));
+        assertThat(tracker.findAll()[1].getName(), is("ItemName2"));
+    }
+
 /*
     @Test
     public void whenReplaceItem() {
