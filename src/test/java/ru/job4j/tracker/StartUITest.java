@@ -7,6 +7,21 @@ import static org.junit.Assert.*;
 public class StartUITest {
 
     @Test
+    public void whenInvalidExit() {
+        Output out = new StubOutput();
+        Input in = new StubInput(new String[]{"2", "0"});
+        Tracker tracker = new Tracker();
+        UserAction[] action = {new ExitAction()};
+        new StartUI(out).init(in, tracker, action);
+        assertThat(out.toString(), is(String.format(
+                "Menu.%n"
+                        + "0. === Exit ===%n"
+                        + "Wrong input, you can select: 0 .. 0%n"
+                        + "Menu.%n"
+                        + "0. === Exit ===%n")));
+    }
+
+    @Test
     public void whenShowAllItemsAction() {
         Output out = new StubOutput();
         Input input = new StubInput(new String[]{"0", "1"});
