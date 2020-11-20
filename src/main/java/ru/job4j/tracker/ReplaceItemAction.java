@@ -2,6 +2,12 @@ package ru.job4j.tracker;
 
 public class ReplaceItemAction implements UserAction {
 
+    private final Output out;
+
+    public ReplaceItemAction(Output out) {
+        this.out = out;
+    }
+
     @Override
     public String name() {
         return "=== Edit item ===";

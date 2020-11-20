@@ -23,7 +23,6 @@ public class StartUITest {
         ));
     }
 
-
     @Test
     public void whenCreateItem() {
         Input in = new StubInput(
@@ -33,11 +32,11 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         UserAction[] actions = {
                 new CreateAction(output),
-                new ReplaceItemAction(),
-                new FindItemByNameAction(),
-                new FindItemByIdAction(),
-                new ShowAllItemsAction(),
-                new DeleteItemAction(),
+                new ReplaceItemAction(output),
+                new FindItemByNameAction(output),
+                new FindItemByIdAction(output),
+                new ShowAllItemsAction(output),
+                new DeleteItemAction(output),
                 new ExitAction()
         };
         new StartUI(output).init(in, tracker, actions);
@@ -53,11 +52,11 @@ public class StartUITest {
         Output output = new StubOutput();
         UserAction[] actions = {
                 new CreateAction(output),
-                new ReplaceItemAction(),
-                new FindItemByNameAction(),
-                new FindItemByIdAction(),
-                new ShowAllItemsAction(),
-                new DeleteItemAction(),
+                new ReplaceItemAction(output),
+                new FindItemByNameAction(output),
+                new FindItemByIdAction(output),
+                new ShowAllItemsAction(output),
+                new DeleteItemAction(output),
                 new ExitAction()
         };
         new StartUI(output).init(in, tracker, actions);
@@ -73,11 +72,11 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         UserAction[] actions = {
                 new CreateAction(output),
-                new ReplaceItemAction(),
-                new FindItemByNameAction(),
-                new FindItemByIdAction(),
-                new ShowAllItemsAction(),
-                new DeleteItemAction(),
+                new ReplaceItemAction(output),
+                new FindItemByNameAction(output),
+                new FindItemByIdAction(output),
+                new ShowAllItemsAction(output),
+                new DeleteItemAction(output),
                 new ExitAction()
         };
         new StartUI(output).init(in, tracker, actions);
@@ -93,11 +92,11 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         UserAction[] actions = {
                 new CreateAction(output),
-                new ReplaceItemAction(),
-                new FindItemByNameAction(),
-                new FindItemByIdAction(),
-                new ShowAllItemsAction(),
-                new DeleteItemAction(),
+                new ReplaceItemAction(output),
+                new FindItemByNameAction(output),
+                new FindItemByIdAction(output),
+                new ShowAllItemsAction(output),
+                new DeleteItemAction(output),
                 new ExitAction()
         };
         new StartUI(output).init(in, tracker, actions);
