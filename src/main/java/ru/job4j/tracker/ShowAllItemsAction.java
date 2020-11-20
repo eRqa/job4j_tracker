@@ -20,10 +20,10 @@ public class ShowAllItemsAction implements UserAction {
         if (allItems.length > 0) {
             for (Item curItem :
                     allItems) {
-                System.out.println(curItem.toString());
+                out.println(curItem.toString());
             }
         } else {
-            System.out.println("No one item found");
+            out.println("No one item found");
         }
         return true;
     }

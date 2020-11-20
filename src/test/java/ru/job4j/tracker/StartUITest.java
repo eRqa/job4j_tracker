@@ -7,6 +7,54 @@ import static org.junit.Assert.*;
 public class StartUITest {
 
     @Test
+    public void whenShowAllItemsAction() {
+        Output out = new StubOutput();
+        Input input = new StubInput(new String[]{"0", "1"});
+        Tracker tracker = new Tracker();
+        UserAction[] action = {new ShowAllItemsAction(out), new ExitAction()};
+        new StartUI(out).init(input, tracker, action);
+        assertThat(out.toString(), is("Menu." + System.lineSeparator()
+                + "0. === Show all items ===" + System.lineSeparator()
+                + "1. === Exit ===" + System.lineSeparator()
+                + "No one item found" + System.lineSeparator()
+                + "Menu." + System.lineSeparator()
+                + "0. === Show all items ===" + System.lineSeparator()
+                + "1. === Exit ===" + System.lineSeparator()));
+    }
+
+    @Test
+    public void whenFindByNameAction() {
+        Output out = new StubOutput();
+        Tracker tracker = new Tracker();
+        Input input = new StubInput(new String[] {"0", "Task One", "1"});
+        UserAction[] action = {new FindItemByNameAction(out), new ExitAction()};
+        new StartUI(out).init(input, tracker, action);
+        assertThat(out.toString(), is("Menu." + System.lineSeparator()
+                + "0. === Find item by name ===" + System.lineSeparator()
+                + "1. === Exit ===" + System.lineSeparator()
+                + "no items found" + System.lineSeparator()
+                + "Menu." + System.lineSeparator()
+                + "0. === Find item by name ===" + System.lineSeparator()
+                + "1. === Exit ===" + System.lineSeparator()));
+    }
+
+    @Test
+    public void whenFindByIdAction() {
+        Output out = new StubOutput();
+        Tracker tracker = new Tracker();
+        UserAction[] action = {new FindItemByIdAction(out), new ExitAction()};
+        Input input = new StubInput(new String[] {"0", "14", "1"});
+        new StartUI(out).init(input, tracker, action);
+        assertThat(out.toString(), is("Menu." + System.lineSeparator()
+                + "0. === Find item by id ===" + System.lineSeparator()
+                + "1. === Exit ===" + System.lineSeparator()
+                + "No items with this id found" + System.lineSeparator()
+                + "Menu." + System.lineSeparator()
+                + "0. === Find item by id ===" + System.lineSeparator()
+                + "1. === Exit ===" + System.lineSeparator()));
+    }
+
+    @Test
     public void whenExit() {
         Output out = new StubOutput();
         Input in = new StubInput(
