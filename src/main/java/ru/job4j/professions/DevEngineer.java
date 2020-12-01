@@ -5,6 +5,10 @@ public class DevEngineer extends Engineer {
     private String teamName;
     private boolean isLeadDev;
 
+    public DevEngineer(String name, String surname, String education) {
+        super(name, surname, education);
+    }
+
     public String getTeamName() {
         return teamName;
     }
