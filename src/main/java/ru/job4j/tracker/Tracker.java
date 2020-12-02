@@ -6,20 +6,6 @@ public class Tracker {
     private final Item[] items = new Item[100];
     private int ids = 1;
     private int size = 0;
-    private static Tracker trackerSingle;
-
-    private Tracker() {
-
-    }
-
-    public static Tracker getTracker() {
-        if (trackerSingle == null) {
-            trackerSingle = new Tracker();
-        }
-
-        return trackerSingle;
-
-    }
 
     public Item add(Item item) {
         item.setId(ids++);
