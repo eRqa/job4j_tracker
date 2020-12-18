@@ -7,10 +7,10 @@ public class ConvertList {
     public static List<Integer> convert(List<int[]> list) {
         List<Integer> rsl = new ArrayList<>();
 
-        for (int[] ints :
-                list) {
-            for (int jits :
-                    ints) {
+        for (int[] ints
+                : list) {
+            for (int jits
+                    : ints) {
                 rsl.add(jits);
             }
         }

@@ -20,8 +20,8 @@ public class ShowAllItemsAction implements UserAction {
         List<Item> allItems = tracker.findAll();
 
         if (allItems.size() > 0) {
-            for (Item curItem :
-                    allItems) {
+            for (Item curItem
+                    : allItems) {
                 out.println(curItem.toString());
             }
         } else {

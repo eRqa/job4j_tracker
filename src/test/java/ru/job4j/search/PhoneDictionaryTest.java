@@ -39,7 +39,6 @@ public class PhoneDictionaryTest {
                 new Person("Pavel", "Vlasov", "8581972", "Saint-Petersburg")
         );
 
-
         ArrayList<Person> persons = phones.find("72");
         assertThat(persons.get(0).getSurname(), is("Arsentev"));
         assertThat(persons.get(1).getSurname(), is("Vlasov"));

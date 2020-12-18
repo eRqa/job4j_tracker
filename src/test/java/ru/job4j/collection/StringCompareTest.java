@@ -9,6 +9,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 public class StringCompareTest {
+
     @Test
     public void whenStringsAreEqualThenZero () {
         StringCompare compare = new StringCompare();
@@ -40,7 +41,7 @@ public class StringCompareTest {
     }
 
     @Test
-    public void secondCharOfLeftGreaterThanRightShouldBePositive(){
+    public void secondCharOfLeftGreaterThanRightShouldBePositive() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "Petrov",
@@ -50,7 +51,7 @@ public class StringCompareTest {
     }
 
     @Test
-    public void secondCharOfLeftLessThanRightShouldBeNegative(){
+    public void secondCharOfLeftLessThanRightShouldBeNegative() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "Patrova",
@@ -58,8 +59,9 @@ public class StringCompareTest {
         );
         assertThat(rst, lessThan(0));
     }
+
     @Test
-    public void whenCompareEmptyStringsShouldBeZero(){
+    public void whenCompareEmptyStringsShouldBeZero() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "",
@@ -69,7 +71,7 @@ public class StringCompareTest {
     }
 
     @Test
-    public void whenCompareNonEmptyWithEmptyShouldBePositive(){
+    public void whenCompareNonEmptyWithEmptyShouldBePositive() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "Petrov12",
@@ -79,7 +81,7 @@ public class StringCompareTest {
     }
 
     @Test
-    public void whenCompareEmptyWithNonEmptyShouldBeNegative(){
+    public void whenCompareEmptyWithNonEmptyShouldBeNegative() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "",

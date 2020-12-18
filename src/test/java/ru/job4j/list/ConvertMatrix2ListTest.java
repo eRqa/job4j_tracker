@@ -25,6 +25,7 @@ public class ConvertMatrix2ListTest {
         assertThat(result, is(expect));
 
     }
+
     @Test
     public void toList5x3() {
 

@@ -18,6 +18,7 @@ public class ConvertListTest {
         List<Integer> expect = Arrays.asList(1, 2, 3);
         assertThat(ConvertList.convert(in), is(expect));
     }
+
     @Test
     public void whenFourList() {
         List<int[]> in = new ArrayList<>();

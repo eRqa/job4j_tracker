@@ -7,7 +7,6 @@ public class Airport {
         airbus.printModel();
         airbus.printCountEngine();
 
-//        airbus = new Airbus("A380"); airbus - final. Можем изменить состояние, но не можем изменить ссылку
         airbus.setName("A380");
         System.out.println(airbus);
 

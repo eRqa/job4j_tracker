@@ -21,8 +21,8 @@ public class Tracker {
 
         List<Item> rsl = new ArrayList<>();
 
-        for (Item item :
-                items) {
+        for (Item item
+                : items) {
             if (item.getName().equals(name)) {
                 rsl.add(item);
             }
