@@ -4,12 +4,12 @@ public class Battery {
 
     private int load;
 
-    public int getLoad() {
-        return this.load;
-    }
-
     public Battery(int load) {
         this.load = load;
+    }
+
+    public int getLoad() {
+        return this.load;
     }
 
     void exchange(Battery another) {

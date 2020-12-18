@@ -9,8 +9,8 @@ public class VehicleImpementation {
 
         Vehicle[] vehicles = new Vehicle[] {plane, bus, train};
 
-        for (Vehicle vehicle :
-                vehicles) {
+        for (Vehicle vehicle
+                : vehicles) {
             vehicle.move();
         }
 

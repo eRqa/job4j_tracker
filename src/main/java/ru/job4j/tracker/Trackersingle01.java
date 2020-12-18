@@ -1,5 +1,5 @@
 package ru.job4j.tracker;
 
-public enum TrackerSingle_01 {
+public enum Trackersingle01 {
     TRACKER
 }

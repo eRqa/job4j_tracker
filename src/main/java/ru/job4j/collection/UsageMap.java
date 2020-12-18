@@ -9,8 +9,8 @@ public class UsageMap {
         hashMap.put("newEMail@gmail.com", "Pavel Vlasov");
         hashMap.put("anotherEMail@gmail.com", "Someone");
 
-        for (String key :
-                hashMap.keySet()) {
+        for (String key
+                : hashMap.keySet()) {
             System.out.println("Key = " + key + " : value = " + hashMap.get(key));
         }
         

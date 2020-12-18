@@ -1,10 +1,10 @@
 package ru.job4j.tracker;
 
-public class TrackerSingle_02 {
+public class TrackerSingle02 {
 
     private static Tracker trackerSingle;
 
-    private TrackerSingle_02() {
+    private TrackerSingle02() {
 
     }
 

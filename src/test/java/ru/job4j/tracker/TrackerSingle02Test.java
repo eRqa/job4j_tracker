@@ -5,12 +5,12 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
-public class TrackerSingle_02Test {
+public class TrackerSingle02Test {
 
     @Test
     public void whengetTracker() {
-        TrackerSingle_01 trackerFirst = TrackerSingle_01.TRACKER;
-        TrackerSingle_01 trackerSecond = TrackerSingle_01.TRACKER;
+        Trackersingle01 trackerFirst = Trackersingle01.TRACKER;
+        Trackersingle01 trackerSecond = Trackersingle01.TRACKER;
         assertThat(trackerFirst, is(trackerSecond));
     }
 }

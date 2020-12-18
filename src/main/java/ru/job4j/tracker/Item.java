@@ -6,22 +6,10 @@ public class Item {
 
     private int id;
     private String name;
+    private LocalDateTime created = LocalDateTime.now();
 
     public Item() {
 
-    }
-
-    @Override
-    public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", created=" + created +
-                '}';
-    }
-
-    public Item(String name) {
-        this.name = name;
     }
 
     public Item(int id, String name) {
@@ -29,11 +17,26 @@ public class Item {
         this.name = name;
     }
 
+    public Item(String name) {
+        this.name = name;
+    }
+
     public LocalDateTime getCreated() {
         return created;
     }
 
-    private LocalDateTime created = LocalDateTime.now();
+    @Override
+    public String toString() {
+        return "Item{"
+                + "id="
+                + id
+                + ", name='"
+                + name
+                + '\''
+                + ", created="
+                + created
+                + '}';
+    }
 
     public int getId() {
         return id;

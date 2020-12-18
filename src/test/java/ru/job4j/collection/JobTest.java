@@ -31,7 +31,8 @@ public class JobTest {
 
     @Test
     public void whenCompareSameNameAndDifferentPriority() {
-        Comparator<Job> cmpNamePriority = new JobDescByName().thenComparing(new JobDescByPriority());
+        Comparator<Job> cmpNamePriority
+                = new JobDescByName().thenComparing(new JobDescByPriority());
         int rsl = cmpNamePriority.compare(
                 new Job("Task", 2),
                 new Job("Task", 4)
@@ -40,8 +41,9 @@ public class JobTest {
     }
 
     @Test
-    public void whenCompareSameNameAndDifferentPriority_2() {
-        Comparator<Job> cmpNamePriority = new JobDescByName().thenComparing(new JobDescByPriority());
+    public void whenCompareSameNameAndDifferentPriority2() {
+        Comparator<Job> cmpNamePriority
+                = new JobDescByName().thenComparing(new JobDescByPriority());
         int rsl = cmpNamePriority.compare(
                 new Job("Task", 4),
                 new Job("Task", 2)
@@ -60,7 +62,7 @@ public class JobTest {
     }
 
     @Test
-    public void whenASCCompareSameNameAndDifferentPriority_2() {
+    public void whenASCCompareSameNameAndDifferentPriority2() {
         Comparator<Job> cmpNamePriority = new JobAscByName().thenComparing(new JobAscByPriority());
         int rsl = cmpNamePriority.compare(
                 new Job("Task", 4),

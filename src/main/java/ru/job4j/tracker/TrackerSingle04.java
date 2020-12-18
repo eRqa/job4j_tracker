@@ -1,11 +1,12 @@
 package ru.job4j.tracker;
 
-public class TrackerSingle_04 {
-    private TrackerSingle_04() {
+public class TrackerSingle04 {
+
+    private TrackerSingle04() {
 
     }
 
-    public static Tracker getTracker(){
+    public static Tracker getTracker() {
         return Holder.TRACKER;
     }
 
