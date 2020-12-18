@@ -9,7 +9,7 @@ import static org.junit.Assert.assertThat;
 public class JobTest {
 
     @Test
-    public void whenAscCompatorByNameAndPrority() {
+    public void whenAscComparatorByNameAndPrority() {
         Comparator<Job> cmpNamePriority = new JobAscByName().thenComparing(new JobAscByPriority());
         int rsl = cmpNamePriority.compare(
                 new Job("Impl task", 0),
@@ -18,11 +18,31 @@ public class JobTest {
         assertThat(rsl, greaterThan(0));
     }
     @Test
-    public void whenFescCompatorByNameAndPrority() {
+    public void whenDescComparatorByNameAndPrority() {
         Comparator<Job> cmpNamePriority = new JobDescByName().thenComparing(new JobDescByPriority());
         int rsl = cmpNamePriority.compare(
                 new Job("Impl task", 0),
                 new Job("Fix bug", 1)
+        );
+        assertThat(rsl, lessThan(0));
+    }
+
+    @Test
+    public void whenCompareSameNameAndDifferentPriority() {
+        Comparator<Job> cmpNamePriority = new JobDescByName().thenComparing(new JobDescByPriority());
+        int rsl = cmpNamePriority.compare(
+                new Job("Task", 2),
+                new Job("Task", 4)
+        );
+        assertThat(rsl, greaterThan(0));
+    }
+
+    @Test
+    public void whenCompareSameNameAndDifferentPriority_2() {
+        Comparator<Job> cmpNamePriority = new JobDescByName().thenComparing(new JobDescByPriority());
+        int rsl = cmpNamePriority.compare(
+                new Job("Task", 4),
+                new Job("Task", 2)
         );
         assertThat(rsl, lessThan(0));
     }
