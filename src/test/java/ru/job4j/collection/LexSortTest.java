@@ -23,6 +23,20 @@ public class LexSortTest {
     }
 
     @Test
+    public void whenSortMultiLevelTasks() {
+        String[] input = {
+                "1.1.4 Task.",
+                "12 Task."
+        };
+        String[] out = {
+                "1.1.4 Task.",
+                "12. Task."
+        };
+        Arrays.sort(input, new LexSort());
+        assertThat(input, is(out));
+    }
+
+    @Test
     public void sort() {
         String[] input = {
                 "10. Task.",
