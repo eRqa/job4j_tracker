@@ -17,7 +17,7 @@ notifications:
     recipients:
       -ivlasov.spb@gmail.com
     on_success: never # default: change
-    on_failure: always # defa,ult: always
+    on_failure: always # default: always
 
 env:
   global:
