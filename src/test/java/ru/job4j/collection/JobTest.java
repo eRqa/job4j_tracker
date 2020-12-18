@@ -46,4 +46,24 @@ public class JobTest {
         );
         assertThat(rsl, lessThan(0));
     }
+
+    @Test
+    public void whenASCCompareSameNameAndDifferentPriority() {
+        Comparator<Job> cmpNamePriority = new JobAscByName().thenComparing(new JobAscByPriority());
+        int rsl = cmpNamePriority.compare(
+                new Job("Task", 2),
+                new Job("Task", 4)
+        );
+        assertThat(rsl, lessThan(0));
+    }
+
+    @Test
+    public void whenASCCompareSameNameAndDifferentPriority_2() {
+        Comparator<Job> cmpNamePriority = new JobAscByName().thenComparing(new JobAscByPriority());
+        int rsl = cmpNamePriority.compare(
+                new Job("Task", 4),
+                new Job("Task", 2)
+        );
+        assertThat(rsl, greaterThan(0));
+    }
 }
