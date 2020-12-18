@@ -19,6 +19,8 @@ notifications:
     on_success: never # default: change
     on_failure: always # default: always
 
-env:
-  global:
-    - CODECOV_TOKEN="b61f59b8-c23e-488e-9d45-6fbae5ff5862"
+
+- CODECOV_TOKEN="b61f59b8-c23e-488e-9d45-6fbae5ff5862"
+
+- after_success:
+  - bash <(curl -s https://codecov.io/bash)
