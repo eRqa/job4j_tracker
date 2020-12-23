@@ -2,10 +2,26 @@ package ru.job4j.bank;
 
 import java.util.Objects;
 
+/**
+ * Класс описывает модкль данных счета пользователя {@link User}
+ * @author Vlasov Pavel
+ * @version 1.0
+ */
 public class Account {
+    /**
+     * Хранение значения реквизита счета осуществляется в переменной типа String
+     */
     private String requisite;
+    /**
+     * Хранение баланса счета осуществляется в переменной типа double
+     */
     private double balance;
 
+    /**
+     * Конструктор обеспечивает инициализацию полей requisite и balance
+     * @param requisite - реквизит счета
+     * @param balance - баланс счета
+     */
     public Account(String requisite, double balance) {
         this.requisite = requisite;
         this.balance = balance;
