@@ -13,9 +13,7 @@ public class Departments {
                 tmp.add(start);
             }
         }
-        List<String> result = new ArrayList<>(tmp);
-        sortAsc(result);
-        return result;
+        return new ArrayList<>(tmp);
     }
 
     public static void sortAsc(List<String> orgs) {
