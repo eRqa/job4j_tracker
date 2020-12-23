@@ -28,7 +28,7 @@ public class StreamUsage {
         List<Task> tasks = List.of(
                 new Task("Bug #1", 100),
                 new Task("Task #2", 100),
-                new Task("Bug #3", 100)
+                new Task("Bug #3", 20)
         );
         List<Task> bugs = tasks.stream().filter(
                 task -> task.name.contains("Bug")
@@ -36,7 +36,16 @@ public class StreamUsage {
         bugs.forEach(System.out::println);
 
         List<Integer> ints = Arrays.asList(1, 4, 6, -1, -2, 3, 9, 0);
-        List<Integer> greaterThan0 = ints.stream().filter(value -> value > 0).collect(Collectors.toList());
+        List<Integer> greaterThan0 = ints.stream()
+                .filter(value -> value > 0)
+                .collect(Collectors.toList());
         greaterThan0.forEach(System.out::println);
+
+        //Это код из задачи 359262
+        tasks.stream()
+                .filter(task -> task.name.contains("Bug"))
+                .filter(task -> task.spent > 30)
+                .map(task -> task.name + " " + task.spent)
+                .forEach(System.out::println);
     }
 }
