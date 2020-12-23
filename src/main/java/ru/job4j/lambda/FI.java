@@ -19,7 +19,7 @@ public class FI {
         };
         Comparator<Attachment> cmpDescSize = (left, right) -> {
             System.out.println("compare " + left.getSize() + " : " + right.getSize());
-            return left.getSize() - right.getSize() ;
+            return left.getSize() - right.getSize();
         };
     }
 
