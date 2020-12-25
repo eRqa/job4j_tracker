@@ -27,6 +27,10 @@ public class ProfilesTest {
                                     "Leninskaya",
                                     4,
                                     4);
+        Address address4 = new Address("Omsk",
+                                    "Leninskaya",
+                                    4,
+                                    4);
         profiles.add(new Profile(address1));
         profiles.add(new Profile(address2));
         profiles.add(new Profile(address3));
@@ -35,8 +39,8 @@ public class ProfilesTest {
         List<Address> act = profCollect.collect(profiles);
 
         List<Address> expected = Arrays.asList(address1,
-                                                address2,
-                                                address3);
+                                                address3,
+                                                address2);
 
         assertThat(act, is(expected));
 
