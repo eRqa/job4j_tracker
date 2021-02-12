@@ -6,11 +6,11 @@ public class TrackerSingle04 {
 
     }
 
-    public static Tracker getTracker() {
+    public static MemTracker getTracker() {
         return Holder.TRACKER;
     }
 
     private static final class Holder {
-        private static final Tracker TRACKER = new Tracker();
+        private static final MemTracker TRACKER = new MemTracker();
     }
 }

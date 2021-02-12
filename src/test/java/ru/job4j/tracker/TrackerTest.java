@@ -12,7 +12,7 @@ public class TrackerTest {
 
     @Test
     public void whenAddNewItemThenTrackerHasSameItem() {
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item item = new Item();
         item.setName("test1");
         tracker.add(item);
@@ -23,7 +23,7 @@ public class TrackerTest {
 
     @Test
     public void whenFindByNameJob4jThenArrayWithOneItem() {
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
 
         Item itemJob4j = new Item();
         itemJob4j.setName("Job4J");
@@ -35,7 +35,7 @@ public class TrackerTest {
 
     @Test
     public void whenTwoItemsAndFindByNameJob4jThenArrayWithOneItem() {
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
 
         Item itemJob4j = new Item();
         itemJob4j.setName("Job4J");
@@ -49,7 +49,7 @@ public class TrackerTest {
 
     @Test
     public void whenFindByNameJob4jThenArrayWithTwoItems() {
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
 
         Item itemJob4j = new Item();
         itemJob4j.setName("Job4J");
@@ -65,7 +65,7 @@ public class TrackerTest {
 
     @Test
     public void whenFindByNameNotAddedItem() {
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
 
         Item itemJob4j = new Item();
         itemJob4j.setName("taskCreateNewClass");
@@ -80,7 +80,7 @@ public class TrackerTest {
 
     @Test
     public void whenReplace() {
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item bug = new Item();
         bug.setName("Bug");
         tracker.add(bug);
@@ -93,7 +93,7 @@ public class TrackerTest {
 
     @Test
     public void whenReplaceTrackerWith3Items() {
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item bugJohny = new Item();
         bugJohny.setName("Bug Johny");
         tracker.add(bugJohny);
@@ -113,7 +113,7 @@ public class TrackerTest {
 
     @Test
     public void whenReplaceTrackerWith3ItemsAndReplace3To1() {
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item bugJohny = new Item();
         bugJohny.setName("Bug Johny");
         tracker.add(bugJohny);
@@ -133,7 +133,7 @@ public class TrackerTest {
 
     @Test
     public void whenReplaceTrackerWith3ItemsAndReplace1To3() {
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item bugJohny = new Item();
         bugJohny.setName("Bug Johny");
         tracker.add(bugJohny);
@@ -153,7 +153,7 @@ public class TrackerTest {
 
     @Test
     public void whenDelete() {
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item bug = new Item();
         bug.setName("Bug");
         tracker.add(bug);
@@ -164,7 +164,7 @@ public class TrackerTest {
 
     @Test
     public void whenDelete1of3() {
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
 
         Item bugJohny = new Item();
         bugJohny.setName("Bug Johny");

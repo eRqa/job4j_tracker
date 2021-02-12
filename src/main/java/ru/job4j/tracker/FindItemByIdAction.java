@@ -14,7 +14,7 @@ public class FindItemByIdAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(Input input, MemTracker tracker) {
         String msg = "Enter id";
         int itemId = Integer.parseInt(input.askStr(msg));
         Item foundItem = tracker.findById(itemId);

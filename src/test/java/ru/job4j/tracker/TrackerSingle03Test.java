@@ -9,8 +9,8 @@ public class TrackerSingle03Test {
 
     @Test
     public void whenGetTracker() {
-        Tracker trackerFirst = TrackerSingle03.getTracker();
-        Tracker trackerSecond = TrackerSingle03.getTracker();
+        MemTracker trackerFirst = TrackerSingle03.getTracker();
+        MemTracker trackerSecond = TrackerSingle03.getTracker();
         assertThat(trackerFirst, is(trackerSecond));
     }
 }

@@ -2,15 +2,15 @@ package ru.job4j.tracker;
 
 public class TrackerSingle02 {
 
-    private static Tracker trackerSingle;
+    private static MemTracker trackerSingle;
 
     private TrackerSingle02() {
 
     }
 
-    public static Tracker getTracker() {
+    public static MemTracker getTracker() {
         if (trackerSingle == null) {
-            trackerSingle = new Tracker();
+            trackerSingle = new MemTracker();
         }
         return trackerSingle;
     }
