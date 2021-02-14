@@ -7,22 +7,26 @@ import java.util.List;
 import java.util.Properties;
 
 public class SqlTracker implements Store {
-    private Connection cn;
+    private final Connection cn;
+
+    public SqlTracker(Connection cn) {
+        this.cn = cn;
+    }
 
     public void init() {
-        try (InputStream in
-                     = SqlTracker.class.getClassLoader().getResourceAsStream("app.properties")) {
-            Properties config = new Properties();
-            config.load(in);
-            Class.forName(config.getProperty("driver-class-name"));
-            cn = DriverManager.getConnection(
-                    config.getProperty("url"),
-                    config.getProperty("username"),
-                    config.getProperty("password")
-            );
-        } catch (Exception e) {
-            throw new IllegalStateException(e);
-        }
+//        try (InputStream in
+//                     = SqlTracker.class.getClassLoader().getResourceAsStream("app.properties")) {
+//            Properties config = new Properties();
+//            config.load(in);
+//            Class.forName(config.getProperty("driver-class-name"));
+//            cn = DriverManager.getConnection(
+//                    config.getProperty("url"),
+//                    config.getProperty("username"),
+//                    config.getProperty("password")
+//            );
+//        } catch (Exception e) {
+//            throw new IllegalStateException(e);
+//        }
     }
 
     @Override
