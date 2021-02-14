@@ -21,7 +21,8 @@ public class FunctionInDiapasonTest {
     @Test
     public void whenSqFunctionThenSqResult() {
         FunctionInDiapason functionInDiapason = new FunctionInDiapason();
-        List<Double> result = functionInDiapason.diapason(4, 7, x -> Math.pow(2 * x, 2) + (2 * x) + 1);
+        List<Double> result
+                = functionInDiapason.diapason(4, 7, x -> Math.pow(2 * x, 2) + (2 * x) + 1);
         List<Double> expected = List.of(73D, 111D, 157D);
         assertThat(expected, is(result));
     }
@@ -30,7 +31,8 @@ public class FunctionInDiapasonTest {
     public void whenLogFunctionThenLogResults() {
         FunctionInDiapason functionInDiapason = new FunctionInDiapason();
         List<Double> result = functionInDiapason.diapason(5, 8, Math::log);
-        List<Double> expected = Arrays.asList(1.6094379124341003D, 1.791759469228055D, 1.9459101490553132D);
+        List<Double> expected
+                = Arrays.asList(1.6094379124341003D, 1.791759469228055D, 1.9459101490553132D);
         assertThat(result, is(expected));
     }
 

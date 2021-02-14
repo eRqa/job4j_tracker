@@ -13,19 +13,36 @@ public class MemTracker implements Store {
     }
 
     public Item add(Item item) {
-        item.setId(ids++);
+        item.setId(Integer.toString(ids++));
         items.add(item);
         return item;
     }
 
     @Override
     public boolean replace(String id, Item item) {
-        return false;
+        boolean rsl = false;
+        int index = indexOf(id);
+
+        if (index != -1) {
+            item.setId(items.get(index).getId());
+            items.set(index, item);
+            rsl = true;
+        }
+
+        return rsl;
     }
 
     @Override
     public boolean delete(String id) {
-        return false;
+        boolean rsl = false;
+        int index = indexOf(id);
+
+        if (index != -1) {
+            this.items.remove(index);
+            rsl = true;
+        }
+
+        return rsl;
     }
 
     public List<Item> findAll() {
@@ -47,18 +64,19 @@ public class MemTracker implements Store {
 
     @Override
     public Item findById(String id) {
-        return null;
-    }
-
-    public Item findById(int id) {
         int index = indexOf(id);
         return index != -1 ? items.get(index) : null;
     }
 
-    private int indexOf(int id) {
+//    public Item findById(int id) {
+//        int index = indexOf(id);
+//        return index != -1 ? items.get(index) : null;
+//    }
+
+    private int indexOf(String id) {
         int rsl = -1;
         for (int index = 0; index < this.items.size(); index++) {
-            if (items.get(index).getId() == id) {
+            if (items.get(index).getId().equals(id)) {
                 rsl = index;
                 break;
             }
@@ -66,31 +84,31 @@ public class MemTracker implements Store {
         return rsl;
     }
 
-    public boolean replace(int id, Item item) {
-        boolean rsl = false;
-        int index = indexOf(id);
+//    public boolean replace(int id, Item item) {
+//        boolean rsl = false;
+//        int index = indexOf(id);
+//
+//        if (index != -1) {
+//            item.setId(items.get(index).getId());
+//            items.set(index, item);
+//            rsl = true;
+//        }
+//
+//        return rsl;
+//    }
 
-        if (index != -1) {
-            item.setId(items.get(index).getId());
-            items.set(index, item);
-            rsl = true;
-        }
-
-        return rsl;
-    }
-
-    public boolean delete(int id) {
-
-        boolean rsl = false;
-        int index = indexOf(id);
-
-        if (index != -1) {
-            this.items.remove(index);
-            rsl = true;
-        }
-
-        return rsl;
-    }
+//    public boolean delete(int id) {
+//
+//        boolean rsl = false;
+//        int index = indexOf(id);
+//
+//        if (index != -1) {
+//            this.items.remove(index);
+//            rsl = true;
+//        }
+//
+//        return rsl;
+//    }
 
     @Override
     public void close() throws Exception {

@@ -8,7 +8,7 @@ public class StartUI {
         this.out = out;
     }
 
-    public void init(Input input, MemTracker tracker, UserAction[] actions) {
+    public void init(Input input, Store tracker, UserAction[] actions) {
         boolean run = true;
         while (run) {
             this.showMenu(actions);

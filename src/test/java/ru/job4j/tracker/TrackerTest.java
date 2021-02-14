@@ -12,7 +12,7 @@ public class TrackerTest {
 
     @Test
     public void whenAddNewItemThenTrackerHasSameItem() {
-        MemTracker tracker = new MemTracker();
+        Store tracker = new MemTracker();
         Item item = new Item();
         item.setName("test1");
         tracker.add(item);
@@ -23,7 +23,7 @@ public class TrackerTest {
 
     @Test
     public void whenFindByNameJob4jThenArrayWithOneItem() {
-        MemTracker tracker = new MemTracker();
+        Store tracker = new MemTracker();
 
         Item itemJob4j = new Item();
         itemJob4j.setName("Job4J");
@@ -35,7 +35,7 @@ public class TrackerTest {
 
     @Test
     public void whenTwoItemsAndFindByNameJob4jThenArrayWithOneItem() {
-        MemTracker tracker = new MemTracker();
+        Store tracker = new MemTracker();
 
         Item itemJob4j = new Item();
         itemJob4j.setName("Job4J");
@@ -49,7 +49,7 @@ public class TrackerTest {
 
     @Test
     public void whenFindByNameJob4jThenArrayWithTwoItems() {
-        MemTracker tracker = new MemTracker();
+        Store tracker = new MemTracker();
 
         Item itemJob4j = new Item();
         itemJob4j.setName("Job4J");
@@ -65,7 +65,7 @@ public class TrackerTest {
 
     @Test
     public void whenFindByNameNotAddedItem() {
-        MemTracker tracker = new MemTracker();
+        Store tracker = new MemTracker();
 
         Item itemJob4j = new Item();
         itemJob4j.setName("taskCreateNewClass");
@@ -80,11 +80,11 @@ public class TrackerTest {
 
     @Test
     public void whenReplace() {
-        MemTracker tracker = new MemTracker();
+        Store tracker = new MemTracker();
         Item bug = new Item();
         bug.setName("Bug");
         tracker.add(bug);
-        int id = bug.getId();
+        String id = bug.getId();
         Item bugWithDesc = new Item();
         bugWithDesc.setName("Bug with description");
         tracker.replace(id, bugWithDesc);
@@ -93,7 +93,7 @@ public class TrackerTest {
 
     @Test
     public void whenReplaceTrackerWith3Items() {
-        MemTracker tracker = new MemTracker();
+        Store tracker = new MemTracker();
         Item bugJohny = new Item();
         bugJohny.setName("Bug Johny");
         tracker.add(bugJohny);
@@ -106,14 +106,14 @@ public class TrackerTest {
         bugMrFord.setName("Bug Mr Ford");
         tracker.add(bugMrFord);
 
-        int id = bugMrFord.getId();
+        String id = bugMrFord.getId();
         tracker.replace(id, bugHarry);
         assertThat(tracker.findById(id).getName(), is("Bug Harry"));
     }
 
     @Test
     public void whenReplaceTrackerWith3ItemsAndReplace3To1() {
-        MemTracker tracker = new MemTracker();
+        Store tracker = new MemTracker();
         Item bugJohny = new Item();
         bugJohny.setName("Bug Johny");
         tracker.add(bugJohny);
@@ -126,14 +126,14 @@ public class TrackerTest {
         bugMrFord.setName("Bug Mr Ford");
         tracker.add(bugMrFord);
 
-        int id = bugMrFord.getId();
+        String id = bugMrFord.getId();
         tracker.replace(id, bugJohny);
         assertThat(tracker.findById(id).getName(), is("Bug Johny"));
     }
 
     @Test
     public void whenReplaceTrackerWith3ItemsAndReplace1To3() {
-        MemTracker tracker = new MemTracker();
+        Store tracker = new MemTracker();
         Item bugJohny = new Item();
         bugJohny.setName("Bug Johny");
         tracker.add(bugJohny);
@@ -146,25 +146,25 @@ public class TrackerTest {
         bugMrFord.setName("Bug Mr Ford");
         tracker.add(bugMrFord);
 
-        int id = bugMrFord.getId();
+        String id = bugMrFord.getId();
         tracker.replace(id, bugJohny);
         assertThat(tracker.findById(id).getName(), is("Bug Johny"));
     }
 
     @Test
     public void whenDelete() {
-        MemTracker tracker = new MemTracker();
+        Store tracker = new MemTracker();
         Item bug = new Item();
         bug.setName("Bug");
         tracker.add(bug);
-        int id = bug.getId();
+        String id = bug.getId();
         tracker.delete(id);
         assertThat(tracker.findById(id), is(nullValue()));
     }
 
     @Test
     public void whenDelete1of3() {
-        MemTracker tracker = new MemTracker();
+        Store tracker = new MemTracker();
 
         Item bugJohny = new Item();
         bugJohny.setName("Bug Johny");
@@ -178,7 +178,7 @@ public class TrackerTest {
         bugMrFord.setName("Bug Mr Ford");
         tracker.add(bugMrFord);
 
-        int id = bugHarry.getId();
+        String id = bugHarry.getId();
 
         tracker.delete(id);
 

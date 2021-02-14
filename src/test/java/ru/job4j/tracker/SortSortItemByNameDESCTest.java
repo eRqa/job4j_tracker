@@ -14,9 +14,9 @@ public class SortSortItemByNameDESCTest {
     @Test
     public void whenCompareWithThreeItems() {
         List<Item> items = Arrays.asList(
-                new Item(1, "third"),
-                new Item(2, "second"),
-                new Item(3, "first")
+                new Item("1", "third"),
+                new Item("2", "second"),
+                new Item("3", "first")
         );
         Collections.sort(items, new SortSortItemByNameDESC());
         assertThat(items.get(0).getName(), is("third"));
@@ -27,9 +27,9 @@ public class SortSortItemByNameDESCTest {
     @Test
     public void whenCompare() {
         List<Item> items = Arrays.asList(
-                new Item(1, "ABC"),
-                new Item(2, "ZZZ"),
-                new Item(3, "DEF")
+                new Item("1", "ABC"),
+                new Item("2", "ZZZ"),
+                new Item("3", "DEF")
         );
         Collections.sort(items, new SortSortItemByNameDESC());
         assertThat(items.get(0).getName(), is("ZZZ"));
